@@ -11,7 +11,19 @@ app.configure(function() {
   app.use(express.json())
   app.use(express.urlencoded())
 })
+app.get('/api', function (req, res) {  
+  res.send('Weatherman API is running');  
+});
+app.get('/api/conditions/:coords', function (req, res){
 
+	wunderground.conditions().request(req.params.coords, function(err, response){
+    if (!err) {
+      return res.send(response);
+    } else {
+      return console.log(err);
+    }
+});
+	});
 var server = require('http').createServer(app)
 
 server.listen(3000, function() {

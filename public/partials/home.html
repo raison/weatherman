@@ -1,5 +1,3 @@
-
-
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -12,20 +10,45 @@
             <a class="navbar-brand" href="#">Weatherman</a>
         </div>
         <div class="navbar-collapse collapse">
-        </div><!--/.navbar-collapse -->
+        </div>
+        <!--/.navbar-collapse -->
     </div>
 </div>
 
 <div class="container">
-    <div class="row">
+    <div class="row" data-ng-show="loaded">
         <div class="col-md-4" ng-controller="HomeCtrl">
-            <h2>Weather Goes Here</h2>
-            <p>Your location is: <span data-ng-bind="coords.lat"></span> <span data-ng-bind="coords.long"></span></p>
+            <h2><img data-ng-src="{{conditions.icon_url}}" /> <span ng-bind="conditions.display_location.full"></span></h2>
+            <div class="list-group">
+                <span class="list-group-item">
+            Current Conditions <span class="badge" data-ng-bind="conditions.weather"></span>
+                </span>
+                <span class="list-group-item">
+            Temperature <span class="badge" data-ng-bind="conditions.temperature_string"></span>
+                </span>
+                <span class="list-group-item">
+            Feels Like <span class="badge" data-ng-bind="conditions.feelslike_string"></span>
+                </span>
+                <span class="list-group-item">
+            Dewpoint <span class="badge" data-ng-bind="conditions.dewpoint_string"></span>
+                </span>
+                <span class="list-group-item">
+            Wind <span class="badge" data-ng-bind="conditions.wind_string"></span>
+                </span>
+                <span class="list-group-item">
+            Precipitation in Last Hour <span class="badge" data-ng-bind="conditions.precip_1hr_string"></span>
+                </span>
+                <span class="list-group-item">
+            Humidity <span class="badge" data-ng-bind="conditions.relative_humidity"></span>
+                </span>
+            </div>
+        </div>
+
     </div>
-
-    <hr>
-
+    <div class="row" data-ng-show="!loaded">
+        <h2>Loading Weather Data...</h2>
+    </div>
     <footer>
     </footer>
-</div> <!-- /container -->
-
+</div>
+<!-- /container -->
