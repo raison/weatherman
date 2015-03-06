@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "node.js + angular + weatherunderground weather",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha"
+    "engines": {
+    "node": "0.12.x"
   },
   "keywords": [
     "node",
