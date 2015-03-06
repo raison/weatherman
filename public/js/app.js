@@ -4,6 +4,7 @@
 
 var weatherMan = angular.module('weathermanApp', [
   'ngRoute',
+  'geolocation',
   'weathermanControllers',
   'weathermanDirectives',
   'weathermanFilters',

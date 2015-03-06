@@ -18,9 +18,9 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4" ng-controller="HomeCtrl">
             <h2>Weather Goes Here</h2>
-            <p>Placeholder for weather data</p>
+            <p>Your location is: <span data-ng-bind="coords.lat"></span> <span data-ng-bind="coords.long"></span></p>
     </div>
 
     <hr>
