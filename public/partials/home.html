@@ -15,9 +15,9 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row" data-ng-show="loaded">
-        <div class="col-md-4" ng-controller="HomeCtrl">
+<div class="container" data-ng-controller="HomeCtrl">
+    <div class="row" data-ng-show="!loading">
+        <div class="col-md-4">
             <h2><img data-ng-src="{{conditions.icon_url}}" /> <span ng-bind="conditions.display_location.full"></span></h2>
             <div class="list-group">
                 <span class="list-group-item">
@@ -45,7 +45,7 @@
         </div>
 
     </div>
-    <div class="row" data-ng-show="!loaded">
+    <div class="row" data-ng-show="loading">
         <h2>Loading Weather Data...</h2>
     </div>
     <footer>
